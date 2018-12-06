@@ -1,0 +1,22 @@
+静态资源放在static目录下，还可以是resources目录下的public 、resources、META-INF\resources目录;
+这些目录下的静态资源都是可以直接访问的，具体见staticDir.png。
+可以通过配置文件中的spring.resources.static-locations=classpath:META-INF\resources;classpath:public;classpath:resources;classpath:static来配置。
+#########################################
+自定义配置文件读取：
+    1.使用  @PropertySource("classpath:conf.properties")  文件位置
+            @ConfigurationProperties(prefix="goods")
+            @Component
+            将配置文件中的内容注入到对象中。通过@Component可以让容器在其他地方引用这个对象。属性名和文件中后缀后面的值不一样时可以用@Value("${}")具体指定。
+    2.@PropertySource("classpath:conf.properties") 也可以单独用，搭配@Value("${}")。
+#######################################
+logging.level.....可以将sql语句输出。
+################################
+springboot集成事务：
+        @Transactional注解开启事务
+        @EnableTransactionManagement （可省略,springboot默认支持）
+###########################################
+springboot 统一异常处理：
+        统一处理异常类使用注解：@ControllerAdvice  但是只能作用于Controller层
+        处理异常的方法上使用注解@ExceptionHandler(Exception.class)
+ ######################################
+ @ImportSource（"classpath:......"）表示引入xml等配置文件,比如springmvc中配置bean的xml文件。

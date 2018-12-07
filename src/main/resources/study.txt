@@ -20,3 +20,9 @@ springboot 统一异常处理：
         处理异常的方法上使用注解@ExceptionHandler(Exception.class)
  ######################################
  @ImportSource（"classpath:......"）表示引入xml等配置文件,比如springmvc中配置bean的xml文件。
+ #########################################
+ 文件上传
+ #########################################
+ 拦截器：1.自定义拦截器继承HandlerInterceptorAdapter或实现其他接口，重写方法；
+        2.拦截器配置：自定义java类，继承WebMvcConfigurerAdapter或实现其他接口，重写方法；
+                -----注册拦截器，添加拦截路径，及不拦截路径
